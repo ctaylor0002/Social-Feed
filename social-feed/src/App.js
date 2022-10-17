@@ -22,12 +22,24 @@ BONUS:
 import React, { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import CreatePostForm from './components/CreatePostForm/CreatePostForm';
+import DisplayPosts from './components/DisplayPosts/DisplayPosts';
 
 function App() {
+
+  const [posts, setPosts] = useState([{name: 'Chucky Tster', post: 'Hey! I see this is your first time on PinIT, so take your time and read around. Feel free to type your name and what ever is on your mind to pin it for the world to see!'}])
+
+  function addNewPost(post) {
+
+    let tempPosts = [...posts, post];
+
+    setPosts(tempPosts);
+  }
+
   return (
     <div>
       <NavBar />
       <CreatePostForm />
+      <DisplayPosts parentEntries={posts} />
     </div>
   );
 }
