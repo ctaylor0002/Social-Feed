@@ -18,7 +18,7 @@
   - Completed
 
 (5 points): As a developer, I want to have an aesthetically pleasing user interface to ensure a great user experience
-
+  - Completed
 BONUS:
 
 (5 points): As a developer, I want to add a date to all posts and post creations.
