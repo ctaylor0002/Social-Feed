@@ -21,9 +21,11 @@ const DisplayPosts = (props) => {
         } else {
             setDislike(false);
         }
+        
     }
 
     function handleLike(event) {
+        
         event.preventDefault();     // Sets the Like Button to false (Doesn't allow a user to select like and dislike)
         if (!like) {
             setLike(true);
@@ -48,7 +50,7 @@ const DisplayPosts = (props) => {
 
                             <div className='buttons'>
                                 <img src={!like ? ThumbsUp : ThumbsUpSelected } alt="Thumbs Up" className="jump-shake" onClick={handleLike} />
-                                <img src={!dislike ? ThumbsDown : ThumbsDownSelected } alt="Thumbs Down" className="jump-shake" onClick={handleDislike} />
+                                <img src={!dislike ? ThumbsDown : ThumbsDownSelected} alt="Thumbs Down" className="jump-shake" onClick={handleDislike} />
                             </div>
 
                         </a>
