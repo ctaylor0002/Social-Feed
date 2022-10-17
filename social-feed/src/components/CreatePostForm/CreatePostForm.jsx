@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CreatePostForm = (props) => {
     // Two react functions are created to keep track of the name and the post strings of this form
@@ -6,21 +6,26 @@ const CreatePostForm = (props) => {
     const [post, setPost] = useState('');       // Post field
     const [time, setTime] = useState('');
 
+    useEffect(() => {
+        let theDateAndTime = new Date().toLocaleString();
+        console.log(theDateAndTime);
+        setTime(theDateAndTime);
+    });
+
     function handleSubmit(event) {
         event.preventDefault();
 
         // This anonymous function sets a variable to the current date and time and returns it to the variable
-        setTime(() => {
-            let theDateAndTime = new Date().toLocaleString();
-            console.log(theDateAndTime);
-            return theDateAndTime;
-        });
+        
+        
+        console.log(time)
 
         let newPost = {
             name: name,
             post: post,
             time: time
         };
+        
         console.log(newPost);
 
         setPost('')
