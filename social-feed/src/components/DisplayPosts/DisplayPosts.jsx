@@ -35,20 +35,25 @@ const DisplayPosts = (props) => {
 
     return ( 
         <div>
-            {props.parentEntries.map((post) => {
+            {props.parentEntries.map((post, index) => {
                 return (
-                    <div>
-                        <a>
-                            <div>
-                                <h5>{post.name}</h5>
+                    <div className='post'>
+                        <a  className='list-group-item list-group-item-action flex-column align-items-start active'>
+                            <div className='d-flex w-100 justify-content-between'>
+                                <h5 className='mb-1'>{post.name}</h5>
                                 <small>{post.time}</small>
                             </div>  
 
-                            <p>{post.post}</p>
+                            <p className='mb-1'>{post.post}</p>
+
+                            <div className='buttons'>
+                                <img src={!like ? ThumbsUp : ThumbsUpSelected } alt="Thumbs Up" className="jump-shake" onClick={handleLike} />
+                                <img src={!dislike ? ThumbsDown : ThumbsDownSelected } alt="Thumbs Down" className="jump-shake" onClick={handleDislike} />
+                            </div>
+
                         </a>
 
-                        <a><img src={!like ? ThumbsUp : ThumbsUpSelected } alt="Thumbs Up" className="jump-shake" onClick={handleLike}/></a>
-                        <a><img src={!dislike ? ThumbsDown : ThumbsDownSelected } alt="Thumbs Down" className="jump-shake" onClick={handleDislike} /></a>
+                        
                     </div>
                     
 

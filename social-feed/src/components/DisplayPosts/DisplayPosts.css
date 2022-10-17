@@ -1,6 +1,6 @@
 img {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     padding: 1em;
 }
 
@@ -19,3 +19,18 @@ img.jump-shake:hover {
     100% { transform: translateY(0) rotate(0) }
 }
 
+.buttons {
+    float: right;
+}
+
+.post {
+    width: 60%;
+    margin: auto;
+    margin-top: 2em;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 2px;
+    padding: 1em;
+    padding-bottom: 5em;
+    box-shadow: 5px 10px 8px #888888;
+}
