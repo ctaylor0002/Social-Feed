@@ -9,30 +9,44 @@ const DisplayPosts = (props) => {
     
     // Utilized functions designed by Pankaj Maru in the comment section of https://stackoverflow.com/questions/51480885/change-image-on-click-react
     const [like, setLike] = useState(false);
-    const likeImages = {ThumbsUp, ThumbsUpSelected};
     const [dislike, setDislike] = useState(false);
-    const dislikeImages = {ThumbsDown, ThumbsDownSelected};
 
     function handleDislike(event) {
         event.preventDefault();
-        if (!dislike) {
-            setDislike(true);
-            setLike(false);         // Sets the Like Button to false (Doesn't allow a user to select like and dislike)
+        //console.log(event);
+        let image = event.target.src;
+        
+        if (image === ThumbsDown) {
+            event.target.src = ThumbsDownSelected;
+
         } else {
-            setDislike(false);
+            event.target.src = ThumbsDown;
         }
+        
+        // if (!dislike) {
+        //     setDislike(true);
+        //     setLike(false);         // Sets the Like Button to false (Doesn't allow a user to select like and dislike)
+        // } else {
+        //     setDislike(false);
+        // }
         
     }
 
     function handleLike(event) {
-        
         event.preventDefault();     // Sets the Like Button to false (Doesn't allow a user to select like and dislike)
-        if (!like) {
-            setLike(true);
-            setDislike(false); 
+        
+        if (event.target.src === ThumbsUp) {
+            event.target.src = ThumbsUpSelected;
         } else {
-            setLike(false);
+            event.target.src = ThumbsUp;
         }
+        
+        // if (!like) {
+        //     setLike(true);
+        //     setDislike(false); 
+        // } else {
+        //     setLike(false);
+        // }
     }
 
     return ( 
@@ -49,8 +63,8 @@ const DisplayPosts = (props) => {
                             <p className='mb-1'>{post.post}</p>
 
                             <div className='buttons'>
-                                <img src={!like ? ThumbsUp : ThumbsUpSelected } alt="Thumbs Up" className="jump-shake" onClick={handleLike} />
-                                <img src={!dislike ? ThumbsDown : ThumbsDownSelected} alt="Thumbs Down" className="jump-shake" onClick={handleDislike} />
+                                <img src={ThumbsUp} alt="Thumbs Up" className="jump-shake" onClick={handleLike} id={'Thumbs-Up' + index}/>
+                                <img src={ThumbsDown} alt="Thumbs Down" className="jump-shake" onClick={handleDislike} id={'Thumbs-Down' + index}/>
                             </div>
 
                         </a>
