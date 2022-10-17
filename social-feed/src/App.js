@@ -26,7 +26,7 @@ import DisplayPosts from './components/DisplayPosts/DisplayPosts';
 
 function App() {
 
-  const [posts, setPosts] = useState([{name: 'Chucky Tster', post: 'Hey! I see this is your first time on PinIT, so take your time and read around. Feel free to type your name and what ever is on your mind to pin it for the world to see!'}])
+  const [posts, setPosts] = useState([{name: 'Chucky Tster', post: 'Hey! I see this is your first time on PinIT, so take your time and read around. Feel free to type your name and what ever is on your mind to pin it for the world to see!', time: '10/16/2022 9:24 PM'}])
 
   function addNewPost(post) {
 
@@ -38,7 +38,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <CreatePostForm />
+      <CreatePostForm addNewPost={addNewPost}/>
       <DisplayPosts parentEntries={posts} />
     </div>
   );

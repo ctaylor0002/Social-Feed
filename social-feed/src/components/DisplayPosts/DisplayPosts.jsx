@@ -7,7 +7,7 @@ const DisplayPosts = (props) => {
                     <a>
                         <div>
                             <h5>{post.name}</h5>
-                            <small>Basic Time</small>
+                            <small>{post.time}</small>
                         </div>  
 
                         <p>{post.post}</p></a> 
