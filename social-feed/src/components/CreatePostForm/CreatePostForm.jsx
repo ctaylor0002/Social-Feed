@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './CreatePostForm.css'
 
 const CreatePostForm = (props) => {
     // Two react functions are created to keep track of the name and the post strings of this form
@@ -36,17 +37,17 @@ const CreatePostForm = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className='form-group'>
                 <label>Name</label>
-                <input type='text' value={name} onChange={(event) => setName(event.target.value)} />
+                <input type='text' class="form-control" value={name} onChange={(event) => setName(event.target.value)} />
             </div>
 
-            <div>
+            <div className='form-group'>
                 <label>Post</label>
-                <input type='text' value={post} onChange={(event) => setPost(event.target.value)} />
+                <input type='text' class="form-control" value={post} onChange={(event) => setPost(event.target.value)} />
             </div>
             
-            <button type='submit'>Create</button>
+            <button type='submit' class="btn btn-primary">Create</button>
         </form>
         
         
